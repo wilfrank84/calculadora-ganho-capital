@@ -7,7 +7,7 @@
     "@angular/core": "^7.2.3",
     "@angular/platform-browser": "^7.2.3",
     "@angular/platform-browser-dynamic": "^7.2.3",
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "^3.5.5",
     "core-js": "^2.6.3",
     "css-loader": "^2.1.0",
     "html-loader": "^0.5.5",
