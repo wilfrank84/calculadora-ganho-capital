@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import templateString from './app.component.html'
 import styleString from './app.component.scss';
 
@@ -10,4 +11,12 @@ import styleString from './app.component.scss';
 
 export class AppComponent {
   name = 'Angular';
+
+  constructor(private http: HttpClient) {}
+
+  public changeName() {
+    this.http.get('/hello_angular/name').subscribe(data => {
+      this.name = data['name'];
+    });
+  }
 }
