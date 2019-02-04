@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 // Modules imports
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './dashboard/client/home/home.component';
+import { ToolbarComponent } from './dashboard/shared/toolbar/toolbar.component';
 
 // Services imports
 import { AuthService } from './shared/auth.service';
@@ -17,15 +18,20 @@ import { AuthService } from './shared/auth.service';
 // Angular Plugins Imports
 import { Angular2TokenService } from 'angular2-token';
 
+// Material imports
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ToolbarComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
+    MatToolbarModule,
     ReactiveFormsModule,
     HttpClientModule,
     HttpModule

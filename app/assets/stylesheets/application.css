@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ @import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+ html, body {
+  padding: 0;
+  margin: 0;
+ }
