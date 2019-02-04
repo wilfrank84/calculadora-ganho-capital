@@ -1,7 +1,7 @@
 export class Transaction {
   public constructor(
     public transactionDate?: string,
-    public transactionkind?: string,
+    public transactionKind?: string,
     public amount?: number,
     public assetKind?: string,
     public assetName?: string,
@@ -20,7 +20,7 @@ export class Transaction {
   public jsonForRailsAPI(options?: any){
     let jsonBody = {
       transaction_date: this.transactionDate,
-      transaction_kind: this.transactionkind,
+      transaction_kind: this.transactionKind,
       amount: this.amount,
       asset_kind: this.assetKind,
       asset_name: this.assetName,

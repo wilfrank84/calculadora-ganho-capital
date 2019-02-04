@@ -1,0 +1,80 @@
+<h1>Transaction Form</h1>
+
+<form [formGroup]="form" (ngSubmit)="createTransaction()">
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Selecione a Operação</mat-label>
+        <mat-select placeholder="Selecione a Operação" formControlName="transactionKind">
+          <mat-option value="0">Compra</mat-option>
+          <mat-option value="1">Venda</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Data da operação</mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="Data da operação" formControlName="transactionDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Selecione o tipo papel</mat-label>
+        <mat-select placeholder="Selecione o tipo papel" formControlName="assetKind">
+          <mat-option value="0">Ação</mat-option>
+          <mat-option value="1">ETF</mat-option>
+          <mat-option value="2">Fundo Imobiliário</mat-option>
+          <mat-option value="3">Opção</mat-option>
+          <mat-option value="4">Mini-Índice</mat-option>
+          <mat-option value="5">Mini-Dólar</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Quantidade adquirida</mat-label>
+        <input matInput placeholder="Apenas números" formControlName="amount">
+      </mat-form-field>
+    </div>
+    <div class="form-group col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome do papel</mat-label>
+        <input matInput placeholder="Ex.: PETR4" formControlName="assetName">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Valor Unitário</mat-label>
+        <input matInput placeholder="R$" formControlName="assetPrice">
+      </mat-form-field>
+    </div>
+    <div class="form-group col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Custos da transação</mat-label>
+        <input matInput placeholder="R$" formControlName="transactionCosts">
+      </mat-form-field>
+    </div>
+    <div class="form-group col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Custo Total da Transação</mat-label>
+        <input matInput placeholder="R$" formControlName="transactionTotalPrice">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <button mat-flat-button color="primary" class="mt-3">Enviar</button>
+
+</form>
