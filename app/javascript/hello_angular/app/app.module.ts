@@ -14,6 +14,7 @@ import { ToolbarComponent } from './dashboard/shared/toolbar/toolbar.component';
 
 // Services imports
 import { AuthService } from './shared/auth.service';
+import { TransactionService } from './dashboard/transactions/shared/transaction.service';
 
 // Angular Plugins Imports
 import { Angular2TokenService } from 'angular2-token';
@@ -43,6 +44,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
   providers: [
     Angular2TokenService,
     AuthService,
+    TransactionService,
     { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]

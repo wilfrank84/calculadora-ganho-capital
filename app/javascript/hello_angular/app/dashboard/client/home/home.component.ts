@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import templateString from './home.component.html'
+import templateString from './home.component.html';
 
 import { Angular2TokenService } from 'angular2-token';
+
+import { TransactionService } from './../../transactions/shared/transaction.service';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +15,12 @@ export class HomeComponent {
 
   public constructor(
     private http: HttpClient,
-    private tokenService: Angular2TokenService
-  ) {}
+    private tokenService: Angular2TokenService,
+    private transactionService: TransactionService
+  ) {
+    this.transactionService.getAll()
+      .subscribe(transactions => console.log(transactions))
+  }
 
   changeName() {
     this.http.get('/hello_angular/name').subscribe(data => {
