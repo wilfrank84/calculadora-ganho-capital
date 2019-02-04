@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'hello_angular/name'
 
   resources :users, only: [:index]
+  resources :stock_exchange_transactions, only: [:index]
 end

@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 2019_02_04_140705) do
     t.integer "amount", null: false
     t.integer "asset_kind", default: 0
     t.string "asset_name"
-    t.decimal "asset_price", precision: 8, scale: 2, null: false
-    t.decimal "transaction_costs", precision: 8, scale: 2
-    t.decimal "transaction_total_price", precision: 8, scale: 2
-    t.integer "status", default: 1
+    t.decimal "asset_price", precision: 8, scale: 4, null: false
+    t.decimal "transaction_costs", precision: 8, scale: 4
+    t.decimal "transaction_total_price", precision: 8, scale: 4
+    t.integer "status", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

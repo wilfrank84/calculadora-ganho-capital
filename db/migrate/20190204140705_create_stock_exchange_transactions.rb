@@ -6,10 +6,10 @@ class CreateStockExchangeTransactions < ActiveRecord::Migration[5.2]
       t.integer :amount, null: false
       t.integer :asset_kind, default: 0
       t.string :asset_name
-      t.decimal :asset_price, null: false, precision: 8, scale: 2
-      t.decimal :transaction_costs, precision: 8, scale: 2
-      t.decimal :transaction_total_price, precision: 8, scale: 2
-      t.integer :status, default: 1
+      t.decimal :asset_price, null: false, precision: 8, scale: 4
+      t.decimal :transaction_costs, precision: 8, scale: 4
+      t.decimal :transaction_total_price, precision: 8, scale: 4
+      t.integer :status, default: 0
       t.references :user, foreign_key: true
 
       t.timestamps
