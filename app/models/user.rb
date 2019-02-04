@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   include DeviseTokenAuth::Concerns::User
+
+  has_many :stock_exchange_transactions
 end
