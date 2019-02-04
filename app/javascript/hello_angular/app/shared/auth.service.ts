@@ -5,7 +5,7 @@ import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Angular2TokenService, UserData } from 'angular2-token';
 
-// import { User } from './../dashboard/admin/users/shared/user.model';
+import { User } from './../home/admin/users/shared/user.model';
 
 @Injectable()
 
@@ -19,17 +19,17 @@ export class AuthService {
     )
   }
 
-  // public signUp(user: User): Observable<Response> {
-  //   return this.tokenService.registerAccount(user as any).pipe(
-  //     catchError(this.handleErrors),
-  //     map(
-  //       res => {
-  //         this.userSignedIn$.next(true);
-  //         localStorage.setItem('user', 'logged');
-  //         return res
-  //       })
-  //   )
-  // }
+  public signUp(user: User): Observable<Response> {
+    return this.tokenService.registerAccount(user as any).pipe(
+      catchError(this.handleErrors),
+      map(
+        res => {
+          this.userSignedIn$.next(true);
+          localStorage.setItem('user', 'logged');
+          return res
+        })
+    )
+  }
 
   public signIn(uid: string, password: string): Observable<Response>{
     let signInData = {
