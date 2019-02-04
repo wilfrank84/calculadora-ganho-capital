@@ -5,7 +5,7 @@ import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Angular2TokenService, UserData } from 'angular2-token';
 
-import { User } from './../home/admin/users/shared/user.model';
+import { User } from './../dashboard/admin/users/shared/user.model';
 
 @Injectable()
 

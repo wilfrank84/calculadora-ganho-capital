@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import templateString from './app.component.html'
-import styleString from './app.component.scss';
 
 import { Angular2TokenService } from 'angular2-token';
 
 @Component({
-  selector: 'hello-angular',
-  template: templateString,
-  styles: [ styleString ]
+  selector: 'app-root',
+  template: templateString
 })
-
 export class AppComponent {
-  name = 'Angular';
 
-  constructor(
+  public constructor(
     private http: HttpClient,
     private tokenService: Angular2TokenService
   ) {
@@ -29,9 +25,4 @@ export class AppComponent {
     })
   }
 
-  public changeName() {
-    this.http.get('/hello_angular/name').subscribe(data => {
-      this.name = data['name'];
-    });
-  }
 }
