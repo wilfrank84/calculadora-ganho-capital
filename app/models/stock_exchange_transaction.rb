@@ -2,8 +2,7 @@ class StockExchangeTransaction < ApplicationRecord
   belongs_to :user
 
   validates :amount, numericality: { only_integer: true }
-  validates :asset_price, :asset_price_less_costs, :transaction_costs,
-            :transaction_total_price, numericality: true
+  validates :asset_price, :transaction_costs, numericality: true
   # validates :transaction_date, :transaction_kind, :amount, :asset_price, presence: true
   # validates :transaction_date, :transaction_kind, :amount, :asset_price, absence: true
 

@@ -35,7 +35,7 @@ export class TransactionComponent implements OnInit {
     this.form = this.formBuilder.group({
       transactionDate:       [null, [ Validators.required ]],
       transactionKind:       [null, [ Validators.required ]],
-      amount:                [null, [ Validators.required ]],
+      amount:                [0, [ Validators.required ]],
       assetKind:             [null, [ Validators.required ]],
       assetName:             [null, [ Validators.required ]],
       assetPrice:            [null, [ Validators.required ]],
@@ -54,12 +54,14 @@ export class TransactionComponent implements OnInit {
     this.transaction.assetName             = this.form.get('assetName').value,
     this.transaction.assetPrice            = this.form.get('assetPrice').value,
     this.transaction.transactionCosts      = this.form.get('transactionCosts').value,
-    this.transaction.assetPriceLessCosts   = this.form.get('assetPriceLessCosts').value
-    this.transaction.transactionTotalPrice = this.form.get('transactionTotalPrice').value
+    // this.transaction.assetPriceLessCosts   = this.form.get('assetPriceLessCosts').value
+    // this.transaction.transactionTotalPrice = this.form.get('transactionTotalPrice').value
+
+    console.log(this.transaction);
 
     this.transactionService.create(this.transaction)
       .subscribe(
-        () => alert("Endereço cadastrado com sucesso!"),
+        () => alert("Transação cadastrada com sucesso!"),
         erro => {
           alert("Ocorreu um erro no servidor, por favor tente mais tarde.");
           console.log(erro);

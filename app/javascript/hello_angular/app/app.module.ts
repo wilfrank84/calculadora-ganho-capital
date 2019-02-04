@@ -32,6 +32,10 @@ import { MatNativeDateModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+// Input Masks
+import { NgxCurrencyModule } from "ngx-currency";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +58,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatNativeDateModule,
     MatSelectModule,
     MatToolbarModule,
+    NgxCurrencyModule,
     ReactiveFormsModule,
     HttpClientModule,
     HttpModule
