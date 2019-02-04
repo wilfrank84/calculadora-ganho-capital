@@ -22,4 +22,12 @@ class StockExchangeTransaction < ApplicationRecord
     mini_dollar: 5,
   }
 
+  before_create :final_purchase_price
+
+
+  def final_purchase_price
+    final_purchase_price = self.asset_price + self.transaction_costs / self.amount
+    self.asset_price_less_costs = final_purchase_price
+  end
+
 end
