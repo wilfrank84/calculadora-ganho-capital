@@ -7,4 +7,5 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
 
   has_many :stock_exchange_transactions
+
 end
