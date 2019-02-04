@@ -3,8 +3,8 @@ class StockExchangeTransaction < ApplicationRecord
 
   validates :amount, numericality: { only_integer: true }
   validates :asset_price, :transaction_costs, numericality: true
-  # validates :transaction_date, :transaction_kind, :amount, :asset_price, presence: true
-  # validates :transaction_date, :transaction_kind, :amount, :asset_price, absence: true
+  validates :transaction_date, :transaction_kind, :amount,
+            :asset_price, :transaction_costs, presence: true
 
   # TRANSACTION KIND OPTIONS
   enum transaction_kind: {
