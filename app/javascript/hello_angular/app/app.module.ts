@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 // Component imports
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './dashboard/client/home/home.component';
-import { TransactionComponent } from './dashboard/transactions/transaction-form/transaction-form.component';
+import { TransactionFormComponent } from './dashboard/transactions/transaction-form/transaction-form.component';
 import { ToolbarComponent } from './dashboard/shared/toolbar/toolbar.component';
 
 // Services imports
@@ -24,12 +24,14 @@ import { Angular2TokenService } from 'angular2-token';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Input Masks
@@ -40,9 +42,10 @@ import { NgxCurrencyModule } from "ngx-currency";
   declarations: [
     AppComponent,
     HomeComponent,
-    TransactionComponent,
+    TransactionFormComponent,
     ToolbarComponent
   ],
+  entryComponents: [TransactionFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -50,6 +53,7 @@ import { NgxCurrencyModule } from "ngx-currency";
     FormsModule,
     MatButtonModule,
     MatDatepickerModule,
+    MatDialogModule,
     MatCheckboxModule,
     MatFormFieldModule,
     MatGridListModule,
@@ -57,6 +61,7 @@ import { NgxCurrencyModule } from "ngx-currency";
     MatInputModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatTableModule,
     MatToolbarModule,
     NgxCurrencyModule,
     ReactiveFormsModule,

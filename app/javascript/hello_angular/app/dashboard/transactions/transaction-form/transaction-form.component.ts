@@ -14,7 +14,7 @@ import { TransactionService } from './../shared/transaction.service';
   template: templateString,
   styles: [ styleString ]
 })
-export class TransactionComponent implements OnInit {
+export class TransactionFormComponent implements OnInit {
   public form: FormGroup;
   public transaction: Transaction;
 
