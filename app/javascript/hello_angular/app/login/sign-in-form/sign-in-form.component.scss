@@ -1,3 +1,5 @@
+.login-page {}
+
 mat-form-field {
   width: 100% !important;
   font-family: 'Lato', sans-serif !important;
@@ -5,6 +7,8 @@ mat-form-field {
 
 button {
   font-family: 'Lato', sans-serif !important;
+  width: 100%;
+  padding: 15px;
 }
 
 .login-box {
