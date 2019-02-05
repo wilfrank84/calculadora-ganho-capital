@@ -1,4 +1,5 @@
 class StockExchangeTransactionsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     begin
@@ -25,9 +26,7 @@ class StockExchangeTransactionsController < ApplicationController
   end
 
   def create
-    # transaction = current_user.transactions.build(transaction_params)
-    transaction = StockExchangeTransaction.new(transaction_params)
-    transaction.user_id = 1
+    transaction = current_user.stock_exchange_transactions.build(transaction_params)
 
     if transaction.save
       render json: transaction, status: 201
