@@ -45,19 +45,4 @@ export class HomeComponent implements OnInit {
   }
 
 
-
-
-
-  // changeName() {
-  //   this.http.get('/hello_angular/name').subscribe(data => {
-  //     this.name = data['name'];
-  //   });
-  // }
-
-  // signOut() {
-  //   this.http.delete('/users/sign_out').subscribe(data => {
-  //     console.log(data);
-  //   });
-  // }
-
 }

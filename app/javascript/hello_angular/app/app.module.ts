@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 // Component imports
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './dashboard/client/home/home.component';
+import { SignInFormComponent } from './login/sign-in-form/sign-in-form.component';
 import { TransactionFormComponent } from './dashboard/transactions/transaction-form/transaction-form.component';
 import { ToolbarComponent } from './dashboard/shared/toolbar/toolbar.component';
 
@@ -19,6 +20,9 @@ import { TransactionService } from './dashboard/transactions/shared/transaction.
 
 // Angular Plugins Imports
 import { Angular2TokenService } from 'angular2-token';
+
+// Guards imports
+import { AuthGuard } from './guards/auth.guard';
 
 // Material imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,6 +46,7 @@ import { NgxCurrencyModule } from "ngx-currency";
   declarations: [
     AppComponent,
     HomeComponent,
+    SignInFormComponent,
     TransactionFormComponent,
     ToolbarComponent
   ],
@@ -70,6 +75,7 @@ import { NgxCurrencyModule } from "ngx-currency";
   ],
   providers: [
     Angular2TokenService,
+    AuthGuard,
     AuthService,
     TransactionService,
     { provide: APP_BASE_HREF, useValue: '/' }

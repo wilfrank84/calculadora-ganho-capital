@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import templateString from './sign-in-form.component.html';
+import styleString from './sign-in-form.component.scss';
 import { AuthService } from './../../shared/auth.service';
 // import { FormUtils } from './../../shared/form.utils';
 
 @Component({
   selector: 'app-sign-in-form',
-  templateUrl: 'sign-in-form.component.html'
+  template: templateString,
+  styles: [ styleString ]
 })
 
 export class SignInFormComponent implements OnInit {
@@ -29,10 +32,7 @@ export class SignInFormComponent implements OnInit {
     this.formErrors = null;
   }
 
-  public ngOnInit() {
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
-  }
+  public ngOnInit() {}
 
   public signInUser(){
     this.submitted = true;
@@ -42,11 +42,7 @@ export class SignInFormComponent implements OnInit {
         (response) => {
           this.formErrors = null;
           this.form.reset();
-
-          // login successful so redirect to return url
-          if (this.returnUrl) {
-            this.router.navigateByUrl(this.returnUrl);
-          }
+          this.router.navigate(['/sign-in']);
         },
         (error) => {
           this.submitted = false;
