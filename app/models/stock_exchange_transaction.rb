@@ -22,12 +22,25 @@ class StockExchangeTransaction < ApplicationRecord
     mini_dollar: 5,
   }
 
-  before_create :final_purchase_price
+  before_create :verify_transaction_kind
 
+
+  def verify_transaction_kind
+    if self.transaction_kind == 'purchase'
+      final_purchase_price
+    else
+      final_sales_price
+    end
+  end
 
   def final_purchase_price
     final_purchase_price = self.asset_price + self.transaction_costs / self.amount
     self.asset_price_less_costs = final_purchase_price
+  end
+
+  def final_sales_price
+    final_sales_price = self.asset_price - self.transaction_costs / self.amount
+    self.asset_price_less_costs = final_sales_price
   end
 
 end
