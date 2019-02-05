@@ -12,6 +12,14 @@ User.create!([
     name: 'Gustavo',
     email: 'admin@email.com',
     password: '123456',
-    password_confirmation: '123456'
+    password_confirmation: '123456',
+    roles: ['admin']
+  },
+  {
+    name: 'Pedro',
+    email: 'cliente@email.com',
+    password: '123456',
+    password_confirmation: '123456',
+    roles: ['client']
   }
 ])
