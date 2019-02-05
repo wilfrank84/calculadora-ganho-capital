@@ -21,7 +21,7 @@ export class ToolbarComponent {
   public signOutUser() {
     this.authService.signOut()
       .subscribe(
-        () => this.router.navigate(['/sign-in']);
+        () => this.router.navigate(['/sign-in'])
       )
   }
 

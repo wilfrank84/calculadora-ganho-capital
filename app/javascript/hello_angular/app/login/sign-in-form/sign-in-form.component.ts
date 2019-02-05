@@ -42,7 +42,7 @@ export class SignInFormComponent implements OnInit {
         (response) => {
           this.formErrors = null;
           this.form.reset();
-          this.router.navigate(['/sign-in']);
+          this.router.navigate(['']);
         },
         (error) => {
           this.submitted = false;
