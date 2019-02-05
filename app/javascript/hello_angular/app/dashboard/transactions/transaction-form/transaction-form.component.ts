@@ -40,8 +40,8 @@ export class TransactionFormComponent implements OnInit {
       assetName:             [null, [ Validators.required ]],
       assetPrice:            [null, [ Validators.required ]],
       transactionCosts:      [null, [ Validators.required ]],
-      assetPriceLessCosts:   [null, [ Validators.required ]],
-      transactionTotalPrice: [null, [ Validators.required ]]
+      // assetPriceLessCosts:   [null, [ Validators.required ]],
+      // transactionTotalPrice: [null, [ Validators.required ]]
     });
   }
 

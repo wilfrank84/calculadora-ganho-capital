@@ -96,6 +96,7 @@ export class TransactionService {
         item.transaction_costs,
         item.asset_price_less_costs,
         item.transaction_total_price,
+        item.irrf,
         item.user_id,
         item.id
       )
@@ -116,6 +117,7 @@ export class TransactionService {
       response.json().transaction_costs,
       response.json().asset_price_less_costs,
       response.json().transaction_total_price,
+      response.json().irrf,
       response.json().user_id,
       response.json().id
     )

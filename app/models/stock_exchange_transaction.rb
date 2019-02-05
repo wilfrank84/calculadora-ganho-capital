@@ -23,7 +23,8 @@ class StockExchangeTransaction < ApplicationRecord
   }
 
   before_create :verify_transaction_kind
-
+  before_create :transaction_total_price
+  after_create :calc_IRRF
 
   def verify_transaction_kind
     if self.transaction_kind == 'purchase'
@@ -41,6 +42,17 @@ class StockExchangeTransaction < ApplicationRecord
   def final_sales_price
     final_sales_price = self.asset_price - self.transaction_costs / self.amount
     self.asset_price_less_costs = final_sales_price
+  end
+
+  def transaction_total_price
+    self.transaction_total_price = self.amount * self.asset_price
+  end
+
+  def calc_IRRF
+    if self.transaction_kind == 'sale' && self.transaction_total_price > 20000
+      irrf = self.transaction_total_price * 0.00005
+      self.update(irrf: irrf)
+    end
   end
 
 end

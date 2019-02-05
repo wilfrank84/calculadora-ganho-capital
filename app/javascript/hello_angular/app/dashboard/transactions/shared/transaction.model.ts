@@ -9,6 +9,7 @@ export class Transaction {
     public transactionCosts?: number,
     public assetPriceLessCosts?: number,
     public transactionTotalPrice?: number,
+    public irrf?: number,
     public userId?: number,
     public id?: number
   ) {}
@@ -27,7 +28,8 @@ export class Transaction {
       asset_price: this.assetPrice,
       transaction_costs: this.transactionCosts,
       asset_price_less_costs: this.assetPriceLessCosts,
-      transaction_total_price: this.transactionTotalPrice
+      transaction_total_price: this.transactionTotalPrice,
+      irrf: this.irrf
     };
 
     return { stock_exchange_transaction: jsonBody };

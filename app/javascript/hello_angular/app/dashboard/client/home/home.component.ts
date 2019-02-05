@@ -18,7 +18,7 @@ import { TransactionFormComponent } from './../../transactions/transaction-form/
 })
 export class HomeComponent implements OnInit {
   name = 'Angular!';
-  displayedColumns: string[] = ['transactionDate', 'transactionKind', 'assetKind', 'assetPrice', 'assetPriceLessCosts'];
+  displayedColumns: string[] = ['transactionDate', 'transactionKind', 'assetKind', 'assetPrice', 'assetPriceLessCosts', 'irrf'];
   transactions: Transaction[] = [];
 
   public constructor(

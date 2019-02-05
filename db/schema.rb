@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_154150) do
+ActiveRecord::Schema.define(version: 2019_02_05_042223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(version: 2019_02_04_154150) do
     t.string "asset_name"
     t.decimal "asset_price", precision: 8, scale: 4, null: false
     t.decimal "transaction_costs", precision: 8, scale: 4
-    t.decimal "transaction_total_price", precision: 8, scale: 4
+    t.decimal "transaction_total_price", precision: 12, scale: 2
     t.integer "status", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "asset_price_less_costs", precision: 8, scale: 4
+    t.decimal "irrf", precision: 8, scale: 2
     t.index ["user_id"], name: "index_stock_exchange_transactions_on_user_id"
   end
 
