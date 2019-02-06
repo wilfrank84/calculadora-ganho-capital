@@ -19,13 +19,14 @@
       <!-- <app-transaction-form></app-transaction-form> -->
 
       <div class="row">
-        <div class="col-md-12 text-right mb-3">
+        <div class="col-md-12 top-buttom mb-3">
           <button mat-flat-button color="primary" class="bt-featured" (click)="openDialog()">Nova transação</button>
+          <button *ifInRole="'admin'" mat-flat-button color="warn" class="bt-featured ml-3" (click)="allTransactions()">Todas as transações (Administrador)</button>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mb-3">
           <h2 class="mb-4">
             <mat-icon class="mr-2">assignment</mat-icon>
             Últimas operações

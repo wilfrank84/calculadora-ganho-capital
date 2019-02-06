@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
 
 import { Angular2TokenService } from 'angular2-token';
 
@@ -25,14 +26,18 @@ export class HomeComponent implements OnInit {
     public dialog: MatDialog,
     private http: HttpClient,
     private tokenService: Angular2TokenService,
-    private transactionService: TransactionService
+    private transactionService: TransactionService,
+    private router: Router
   ) {}
 
   public ngOnInit() {
-    this.transactionService.getAll()
+    this.getUserTransactions();
+  }
+
+  public getUserTransactions() {
+    this.transactionService.getByUser()
       .subscribe(transactions => {
         this.transactions = transactions;
-        console.log(this.transactions);
       })
   }
 
@@ -40,9 +45,12 @@ export class HomeComponent implements OnInit {
     const dialogRef = this.dialog.open(TransactionFormComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      this.getUserTransactions();
     });
   }
 
+  public allTransactions() {
+    this.router.navigate(['/transactions'])
+  }
 
 }

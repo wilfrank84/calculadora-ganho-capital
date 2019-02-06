@@ -11,7 +11,7 @@ class StockExchangeTransactionsController < ApplicationController
   end
 
   def user_transactions
-    transactions = StockExchangeTransaction.find_by(user_id: current_user)
+    transactions = StockExchangeTransaction.where(user_id: current_user.id)
 
     if transactions
       render json: transactions, status: 200

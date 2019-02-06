@@ -15,7 +15,7 @@ export class ToolbarComponent {
 
   public constructor(
     public authService: AuthService,
-    private router: Router,
+    private router: Router
   ) {}
 
   public signOutUser() {

@@ -1,0 +1,76 @@
+<app-toolbar></app-toolbar>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 home-left p-5">
+
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <h1>Bem vindo de volta ao seu painel William</h1>
+          <p>Aqui você tem acesso as informações atualizadas sobre seus investimentos, impostos e custos.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-8 p-5 home-right">
+      <!-- <h1>Hello {{ name }}</h1>
+      <button (click)="changeName()">Change Name!</button>
+      <button (click)="signOut()">Sair</button> -->
+      <!-- <app-transaction-form></app-transaction-form> -->
+
+      <div class="row">
+        <div class="col-md-12 top-buttom mb-3">
+          <button mat-flat-button color="primary" class="bt-featured" (click)="openDialog()">Nova transação</button>
+          <button mat-flat-button class="bt-featured ml-3" (click)="goBack()">Voltar</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="mb-4">
+            <mat-icon class="mr-2">assignment</mat-icon>
+            Últimas operações
+          </h2>
+
+          <table mat-table [dataSource]="transactions" class="mat-elevation-z1">
+
+            <ng-container matColumnDef="transactionDate">
+              <th mat-header-cell *matHeaderCellDef> Data da transação </th>
+              <td mat-cell *matCellDef="let element"> {{ element.transactionDate | date: medium }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="transactionKind">
+              <th mat-header-cell *matHeaderCellDef> Tipo de transação </th>
+              <td mat-cell *matCellDef="let element"> {{ element.transactionKind }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="assetKind">
+              <th mat-header-cell *matHeaderCellDef> Tipo de ativo </th>
+              <td mat-cell *matCellDef="let element"> {{ element.assetKind }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="assetPrice">
+              <th mat-header-cell *matHeaderCellDef> Preço do ativo </th>
+              <td mat-cell *matCellDef="let element"> {{ element.assetPrice | currency:'BRL' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="assetPriceLessCosts">
+              <th mat-header-cell *matHeaderCellDef> Valor final </th>
+              <td mat-cell *matCellDef="let element"> {{ element.assetPriceLessCosts | currency:'BRL' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="irrf">
+              <th mat-header-cell *matHeaderCellDef> IRRF </th>
+              <td mat-cell *matCellDef="let element"> {{ element.irrf | currency:'BRL' }} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

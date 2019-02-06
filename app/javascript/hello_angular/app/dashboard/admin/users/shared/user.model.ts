@@ -2,6 +2,7 @@ export class User {
   public constructor(
     public email?: string,
     public name?: string,
+    public roles?: Array<any>,
     public id?: number
   ) {}
 

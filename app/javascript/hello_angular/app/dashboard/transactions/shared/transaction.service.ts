@@ -31,14 +31,14 @@ export class TransactionService {
   }
 
   public getByUser(): Observable<any>{
-    let url = `user/address`;
+    let url = `transactions/user`;
 
     return this.tokenHttp.get(url).pipe(
       catchError(this.handleErrors),
       map((response: Response) => {
 
         if (response.status === 200) {
-          return this.responseToTransaction(response)
+          return this.responseToTransactions(response)
         } else {
           return null;
         }

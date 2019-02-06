@@ -44,6 +44,8 @@ gem 'devise', '~> 4.2'
 gem 'devise_token_auth', '~> 1.0'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 
+gem 'active_model_serializers', '~> 0.10.0'
+
 gem 'cancancan', '~> 1.15'
 gem 'role_model', '~> 0.8.2'
 
