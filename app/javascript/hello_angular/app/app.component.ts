@@ -17,7 +17,7 @@ export class AppComponent {
     private tokenService: Angular2TokenService
   ) {
     this.tokenService.init({
-      apiBase: 'http://localhost:3000',
+      apiBase: 'https://calculadora-ganho-capital.herokuapp.com',
       resetPasswordCallback: window.location.href,
       globalOptions: {
         headers: {
